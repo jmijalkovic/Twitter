@@ -68,4 +68,10 @@ public class TwitterPoruka {
 	public String toString(){
 		return "KORISNIK:"+korisnik+" PORUKA:"+poruka;
 	} 
+	@Override
+	 	public boolean equals(Object obj) {
+	 		TwitterPoruka t = (TwitterPoruka)(obj);
+	 		if(t.getKorisnik().equals(korisnik) && t.getPoruka().equals(poruka)) return true;
+	 		else return false;
+	 	}
 }
