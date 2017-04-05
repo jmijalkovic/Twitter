@@ -74,4 +74,25 @@ public class TwitterTest {
 	 	t.unesi(tp1.getKorisnik(), tp1.getPoruka());
 	 	assertEquals(tp, t.vratiPoruke(1, "poy")[0]);
 	 }
+	
+	@Test
+	 public void testVratiPorukeNekoliko() {
+	 	TwitterPoruka tp = new TwitterPoruka();
+	 	tp.setKorisnik("Joja");
+	 	tp.setPoruka("Poy poy");
+	 	TwitterPoruka tp1 = new TwitterPoruka();
+	 	tp1.setKorisnik("Aleks");
+	 	tp1.setPoruka("Poy poy");
+	 	TwitterPoruka tp2 = new TwitterPoruka();
+	 	tp2.setKorisnik("Katarina");
+	 	tp2.setPoruka("Engleski2");
+	 	t.unesi(tp.getKorisnik(), tp.getPoruka());
+	 	t.unesi(tp1.getKorisnik(), tp1.getPoruka());
+	 	t.unesi(tp2.getKorisnik(), tp2.getPoruka());
+	 	TwitterPoruka[] niz = new TwitterPoruka[10];
+	 	niz[0]=tp;
+	 	niz[1]=tp1;
+	 	assertArrayEquals(niz, t.vratiPoruke(10, "poy"));
+	 }
+	
 }

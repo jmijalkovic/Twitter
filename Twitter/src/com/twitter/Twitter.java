@@ -56,13 +56,15 @@ public class Twitter {
 	//Ako se nadje neka takva, i ako nije prekoracen maxBroj
 	//ona se upisuje u niz. Ako je prekoracen maxBroj,pretraga
 	//se prekida.
-		for (int i = 0; i < poruke.size(); i++)
-			if (poruke.get(i).getPoruka().indexOf(tag)!=-1)
+		for (int i = 0; i < poruke.size(); i++){
+			if (poruke.get(i).getPoruka().indexOf(tag)!=-1){
 				if (brojac < maxBroj){
 					rezultat[brojac]=poruke.get(i);
 					brojac++;
 				}
 				else break;
+			}
+		}
 		return rezultat;
 	} 
 }
